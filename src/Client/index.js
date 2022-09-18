@@ -44,10 +44,11 @@ client.on("MESSAGE_CREATE", async payload => {
     const { message, channel_id } = payload
     const { id, content, author} = message
     if(author.id != client.user.id) return
-    await got.post("https://message-signer.theuntraceable.tech/api/sign", {
+    await got.post("http://127.0.0.1:3000/api/sign", {
         json: {
-            message: content,
+            content,
             id: id,
+
         }
     })
 })
@@ -64,9 +65,3 @@ if (token.token && new Date(token.expiresAt) > Date.now()) {
 }
 
 client.login(loginOptions);
-const NodeRSA = require("node-rsa");
-const publicFile = (fs.readFileSync("../.public")).toString();
-const privateFile = (fs.readFileSync("../.private")).toString();
-
-const publicKey = new NodeRSA(publicFile);
-const privateKey = new NodeRSA(privateFile);

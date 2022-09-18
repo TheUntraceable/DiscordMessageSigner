@@ -40,3 +40,6 @@ I was using Git's GPG signing, and I thought it would be cool to have a similar 
 
 ## How do I contribute?
 If you want to contribute, you can fork the repository, and make a pull request. I will review it, and if it's good, I will merge it.
+
+## Notice
+I give up. I don't see it being useful anymore.
