@@ -1,14 +1,14 @@
+import NodeRSA from "node-rsa";
 import { Client } from "@theuntraceable/discord-rpc";
-import configFile from "../config.json" assert { type: "json" };
-import tokenFile from "./token.json" assert { type: "json" };
+import config from "../config.json" assert { type: "json" };
+import token from "./token.json" assert { type: "json" };
 import fs from "fs";
-
-const config = configFile;
-
-const token = tokenFile;
 
 const publicFile = (fs.readFileSync("../.public")).toString();
 const privateFile = (fs.readFileSync("../.private")).toString();
+
+const publicKey = new NodeRSA(publicFile);
+const privateKey = new NodeRSA(privateFile);
 
 const client = new Client({
     transport: "ipc"
@@ -31,7 +31,7 @@ const loginOptions = {
     redirectUri: "https://discord.com"
 };
 
-if (token.token && new Date(token.expiresAt) > Date()) {
+if (token.token && new Date(token.expiresAt) > Date.now()) {
     loginOptions.accessToken = token.token;
 }
 
