@@ -15,11 +15,6 @@ const setup = async () => {
             message: 'Enter your client secret'
         },
     ]);
-    answers.public_key = `
-    YOUR PUBLIC KEY HERE`
-    answers.private_key = `
-    YOUR PRIVATE KEY HERE`
-
     try {
         await fs.writeFile("./config.json", JSON.stringify(answers))
         console.log(chalk.green("Successfully wrote config file!"))
