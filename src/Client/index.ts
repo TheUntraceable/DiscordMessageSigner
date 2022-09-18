@@ -11,10 +11,12 @@ const config: {
     private_key: String
 } = configFile
 
-const token: {
-    token? String
-    expiresAt? String
+// @ts-ignore
+const token: { 
+    token?: String
+    expiresAt?: String
 } = tokenFile
+
 const client: Client = new Client({
     transport: "ipc"
 })
@@ -47,7 +49,8 @@ const loginOptions: {clientId: String, clientSecret: String, scopes: String[], r
     redirectUri: "https://discord.com"
 }
 
-if(token.token && new Date(token.expiresAt) > new Date()) {
+// @ts-ignore
+if(token.token && new Date(token.expiresAt) > Date()) {
     loginOptions.accessToken = token.token
 }
 
