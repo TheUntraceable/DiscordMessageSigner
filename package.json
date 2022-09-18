@@ -1,0 +1,36 @@
+{
+  "name": "discordmessagesigner",
+  "version": "1.0.0",
+  "description": "Sign the messages you send on Discord, and catch invaders.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheUntraceable/DiscordMessageSigner.git"
+  },
+  "keywords": [
+    "signing",
+    "verifying",
+    "discord",
+    "message",
+    "signing-messages",
+    "message-signer",
+    "sign",
+    "discord-rpc",
+    "rsa"
+  ],
+  "author": "TheUntraceable",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheUntraceable/DiscordMessageSigner/issues"
+  },
+  "homepage": "https://github.com/TheUntraceable/DiscordMessageSigner#readme",
+  "dependencies": {
+    "@theuntraceable/discord-rpc": "^4.0.8",
+    "node-rsa": "^1.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
+}
