@@ -2,7 +2,8 @@
   "name": "discordmessagesigner",
   "version": "1.0.0",
   "description": "Sign the messages you send on Discord, and catch invaders.",
-  "main": "index.js",
+  "type": "module",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +31,8 @@
   "dependencies": {
     "@theuntraceable/discord-rpc": "^4.0.8",
     "better-sqlite3": "^7.6.2",
+    "chalk": "^5.0.1",
+    "inquirer": "^9.1.1",
     "node-rsa": "^1.1.1",
     "quick.db": "^9.0.6",
     "ts-node": "^10.9.1",
