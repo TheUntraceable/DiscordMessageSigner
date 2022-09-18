@@ -40,6 +40,8 @@ If you change the public key, the server will understand, but if you *only* chan
 
 TL;DR: Keep your keys synced.
 
+After this, you need to create 2 more files, `token.json`, and `database.sqlite`. You don't need to do anything after this, the application uses this internally.
+
 After you setup your config, you can run the application. You can run it by using `npm start`.
 
 ## Why?
