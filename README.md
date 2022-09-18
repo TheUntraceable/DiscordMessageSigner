@@ -21,7 +21,7 @@ After this you need to generate a public and private key. You can do this by usi
 
 Then, run `npm i` to install all the dependencies.
 
-With all your information ready, go to the `src` directory, and run `node setup.js`, fill in all information.
+With all your information ready, go to the `src` directory, and edit the `setup.js`, entering your public and private key where it says to put it, and then you can run `node setup.js`, fill in all information.
 
 The private key is used for signing the messages, and is never stored server-side, so you don't need to worry about it being leaked.
 The public key, on the other hand, is used for verifying the messages, and is stored server-side. This is not an issue as *public* keys can be shown to anyone with no issue.
