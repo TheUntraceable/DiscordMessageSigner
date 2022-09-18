@@ -29,7 +29,9 @@
   "homepage": "https://github.com/TheUntraceable/DiscordMessageSigner#readme",
   "dependencies": {
     "@theuntraceable/discord-rpc": "^4.0.8",
+    "better-sqlite3": "^7.6.2",
     "node-rsa": "^1.1.1",
+    "quick.db": "^9.0.6",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
   }
