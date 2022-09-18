@@ -31,6 +31,8 @@ The file should look like:
 }
 ```
 
+Put this in a file called `config.json` and put it in the src folder.
+
 The private key is used for signing the messages, and is never stored server-side, so you don't need to worry about it being leaked.
 The public key, on the other hand, is used for verifying the messages, and is stored server-side. This is not an issue as *public* keys can be shown to anyone with no issue.
 If you change the private key, the server will not know, and thus will not be able to verify the messages, and all messages wil be marked as unverified.
