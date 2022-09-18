@@ -1,14 +1,12 @@
 import { Client } from "@theuntraceable/discord-rpc"
-import { NodeRSA } from "node-rsa"
+import NodeRSA from "node-rsa"
 import configFile from "../config.json" assert {type: "json"}
 import tokenFile from "./token.json" assert {type: "json"}
-import fs from "fs/promises"
+import fs from "fs"
 
 const config: {
     client_id: String
     client_secret: String
-    public_key: String
-    private_key: String
 } = configFile
 
 // @ts-ignore
@@ -17,13 +15,17 @@ const token: {
     expiresAt?: String
 } = tokenFile
 
+const publicFile = (fs.readFileSync("../.public")).toString()
+const privateFile = (fs.readFileSync("../.private")).toString()
+
+// @ts-ignore
 const client: Client = new Client({
     transport: "ipc"
 })
 
 interface ReadyPayload {
-    accessToken?: String
-    expiresAt?: String
+    access_token?: String
+    expires?: String
     user?: {
         id: String
         username: String
@@ -34,10 +36,11 @@ interface ReadyPayload {
 }
 
 client.on("ready", async (message: ReadyPayload) => {
-    if(message.accessToken) {
-        await fs.writeFile("./token.json", JSON.stringify({
-            token: message.accessToken,
-            expiresAt: message.expiresAt
+    console.log(message)
+    if(message.access_token) {
+        fs.writeFileSync("./token.json", JSON.stringify({
+            token: message.access_token,
+            expiresAt: message.expires
         }))
     }
 })
