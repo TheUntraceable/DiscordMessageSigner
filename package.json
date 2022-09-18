@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sign the messages you send on Discord, and catch invaders.",
   "type": "module",
-  "main": "./index.js",
+  "main": "./src/Client/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,10 +34,6 @@
     "chalk": "^5.0.1",
     "inquirer": "^9.1.1",
     "node-rsa": "^1.1.1",
-    "quick.db": "^9.0.6",
-    "typescript": "^4.8.3"
-  },
-  "devDependencies": {
-    "ts-node": "^10.9.1"
+    "quick.db": "^9.0.6"
   }
 }
