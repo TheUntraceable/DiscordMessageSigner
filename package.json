@@ -30,10 +30,17 @@
   "homepage": "https://github.com/TheUntraceable/DiscordMessageSigner#readme",
   "dependencies": {
     "@theuntraceable/discord-rpc": "^4.0.8",
+    "bcrypt": "^5.0.1",
     "better-sqlite3": "^7.6.2",
     "chalk": "^5.0.1",
+    "discord.js": "^14.3.0",
+    "express": "^4.18.1",
+    "got": "^12.4.1",
     "inquirer": "^9.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.9.1",
     "node-rsa": "^1.1.1",
+    "progress": "^2.0.3",
     "quick.db": "^9.0.6"
   }
 }
