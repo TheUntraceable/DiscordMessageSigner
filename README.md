@@ -19,19 +19,9 @@ To get started, you'll need to have an application created on the [Discord Devel
 
 After this you need to generate a public and private key. You can do this by using the [RSA Key Generator](https://travistidwell.com/jsencrypt/demo/). You'll need to generate a 2048 bit key. After this, you'll need to copy the public key and private key, these will be used in the config.
 
-After this, use the format below, and put in the information where relevant.
+Then, run `npm i` to install all the dependencies.
 
-The file should look like:
-```json
-{
-    "client_id": "YOUR_CLIENT_ID",
-    "client_secret": "YOUR_CLIENT_SECRET",
-    "public_key": "YOUR_PUBLIC_KEY",
-    "private_key": "YOUR_PRIVATE_KEY"
-}
-```
-
-Put this in a file called `config.json` and put it in the src folder.
+With all your information ready, go to the `src` directory, and run `node setup.js`, fill in all information.
 
 The private key is used for signing the messages, and is never stored server-side, so you don't need to worry about it being leaked.
 The public key, on the other hand, is used for verifying the messages, and is stored server-side. This is not an issue as *public* keys can be shown to anyone with no issue.

@@ -14,17 +14,12 @@ const setup = async () => {
             name: 'client_secret',
             message: 'Enter your client secret'
         },
-        {
-            type: 'input',
-            name: 'public_key',
-            message: 'Enter your public key'
-        },
-        {
-            type: 'input',
-            name: 'private_key',
-            message: 'Enter your private key'
-        }
     ]);
+    answers.public_key = `
+    YOUR PUBLIC KEY HERE`
+    answers.private_key = `
+    YOUR PRIVATE KEY HERE`
+
     try {
         await fs.writeFile("./config.json", JSON.stringify(answers))
         console.log(chalk.green("Successfully wrote config file!"))
